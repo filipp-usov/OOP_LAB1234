@@ -12,7 +12,7 @@ protected:
     int x, y;
     Health health;
     Armor armor;
-    Attack attack; // <--- Поле класса
+    Attack attack; 
 
 public:
     Unit(int id, int x, int y, int hp, int arm, int atk);
@@ -42,7 +42,6 @@ public:
         }
     }
 
-    // Метод атаки переименован, чтобы не конфликтовать с классом Attack
     void attackTarget(Unit& target) {
         Logger().log(LogEvent("INFO", "UNIT:" + getType(), "attacks " + target.getType()));
     }
@@ -56,7 +55,6 @@ inline std::ostream& operator<<(std::ostream& os, const Unit& unit) {
     return os;
 }
 
-// ... (Классы Infantry, Swordsman и т.д. остаются как были) ...
 class Infantry : public Unit { public: Infantry(int id, int x, int y, int hp, int arm, int atk) : Unit(id, x, y, hp, arm, atk) {} };
 class Swordsman : public Infantry { public: Swordsman(int id, int x, int y) : Infantry(id, x, y, 100, 10, 20) {} std::string getType() const override { return "Swordsman"; } Unit* clone() const override { return new Swordsman(*this); } };
 class Spearman : public Infantry { public: Spearman(int id, int x, int y) : Infantry(id, x, y, 80, 15, 15) {} std::string getType() const override { return "Spearman"; } Unit* clone() const override { return new Spearman(*this); } };

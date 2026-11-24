@@ -177,7 +177,6 @@ public:
     }
 };
 
-// Перегрузка вывода (п.4 Этап 4)
 inline std::ostream& operator<<(std::ostream& os, const Base& base) {
     os << "Base at (" << base.getX() << "," << base.getY() << ")";
     return os;

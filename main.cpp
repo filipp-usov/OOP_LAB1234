@@ -23,7 +23,7 @@ void generateRandomMap(GameField& field) {
 }
 
 void runLab1() {
-    std::cout << "\n--- LAB 1 SCENARIOS ---\n";
+    std::cout << "\n LAB 1 SCENARIOS \n";
     GameField field(10, 10, 5);
     generateRandomMap(field);
     InfantryFactory infFactory;
@@ -41,7 +41,7 @@ void runLab1() {
 }
 
 void runLab2() {
-    std::cout << "\n--- LAB 2 SCENARIOS ---\n";
+    std::cout << "\n LAB 2 SCENARIOS \n";
     InfantryFactory infFactory;
     Base myBase(5, 5, 1000, 5, 10, 500, &infFactory);
     myBase.createUnit("Swordsman", 1, 1);
@@ -56,7 +56,7 @@ void runLab2() {
 }
 
 void runLab3() {
-    std::cout << "\n--- LAB 3 SCENARIOS ---\n";
+    std::cout << "\n LAB 3 SCENARIOS \n";
     InfantryFactory infFactory;
     Base myBase(5, 5, 1000, 5, 10, 100, &infFactory);
     GameField field;
@@ -75,7 +75,7 @@ void runLab3() {
 }
 
 void runLab4() {
-    std::cout << "\n--- LAB 4 SCENARIOS (Logging System) ---\n";
+    std::cout << "\n LAB 4 SCENARIOS (Logging System) \n";
     InfantryFactory infFactory;
     Base myBase(5, 5, 1000, 10, 10, 500, &infFactory);
     GameField field;
@@ -83,12 +83,11 @@ void runLab4() {
     GameMediator mediator(&myBase, &field);
     GameFacade facade(&mediator);
 
-    std::cout << "\n================ LAB 4 CONTROLS ================\n";
+    std::cout << "\n LAB 4 CONTROLS \n";
     std::cout << "Scenario 1: set_logger console, set_format text, move unit 1 to 5,5\n";
     std::cout << "Scenario 2: set_logger file game_log.json, set_format json, build Barracks at 3 3\n";
     std::cout << "Scenario 3: set_logger null, create unit 1 at 2 2, set_logger console\n";
     std::cout << "Scenario 4: set_format csv, collect unit 1, set_format text\n";
-    std::cout << "===============================================\n";
 
     std::string input;
     while (true) {
@@ -123,9 +122,7 @@ void runLab4() {
 int main() {
     int choice = 0;
     while (true) {
-        std::cout << "\n=========================================\n";
-        std::cout << "    MAIN MENU (MMO RPG) - FULL GAME\n";
-        std::cout << "=========================================\n";
+        std::cout << "   MAIN MENU (MMO RPG) \n";
         std::cout << "1. Run Lab 1 scenarios\n";
         std::cout << "2. Run Lab 2 scenarios\n";
         std::cout << "3. Run Lab 3 scenarios\n";
